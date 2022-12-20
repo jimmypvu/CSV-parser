@@ -15,14 +15,14 @@ myForm.addEventListener("submit", function (e) {
             const csvContents = e.target.result;
             const data = csvToArray(csvContents);
             //use this to write to DOM instead of document.write(text);  (unstable method per mdn)
+            //document.write(JSON.stringify(data));
             //document.getElementById("result").innerText = csvContents;
             document.getElementById("formattedResult").innerText = JSON.stringify(data);
-            //document.write(JSON.stringify(data));
         };
     
     });
 
-//convert csv string to array
+//function to convert csv string to array
 function csvToArray(str, delimiter = ","){
     //slice parsed csv string from index 0 through first new line \n to get csv headers (first row only)
     //then split at commas to give our separated header values as an array
